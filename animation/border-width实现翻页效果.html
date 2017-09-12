@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>border-width实现翻页效果</title>
+    <style>
+        body{margin: 0;padding: 0;background-color: #eaf0f2;}
+        h1{text-align: center;font-size: 14px; font-family: "Microsoft Yahei";}
+        .paper-flip{position: relative; width: 500px;height: 300px;margin: 0 auto;}
+        .share-layer{position: absolute;left: 0; top:0;width: 500px;height: 300px;background-color: #ffffff; -webkit-box-shadow:  0 0 5px rgba(0,0,0,.2); -moz-box-shadow:  0 0 5px rgba(0,0,0,.2); box-shadow:  0 0 5px rgba(0,0,0,.2);}
+        .btn-wrap{pointer-events: none;opacity: 0;text-align: center;margin-top: 140px;text-align: center;}
+        .btn{padding: 10px;border-radius: 2px;color: #ffffff;display: inline-block;}
+        .btn-facebook{background-color: #3b5998;}
+        .btn-twitter{background-color: #00aced;margin: 0 20px;}
+        .btn.btn-google{background-color: #d34836;}
+        .btn-close{pointer-events: none;position: absolute;right: 15px;top: 10px;color: rgba(0,0,0,.3);font-size: 20px;z-index: 11;opacity: 0;cursor: default;}
+        /*transition: property duration timing-function delay;*/
+        .paper-flip.folded .btn-close{ -webkit-transition:  0.4s 0.6s; -moz-transition:  0.4s 0.6s; -ms-transition:  0.4s 0.6s; -o-transition:  0.4s 0.6s; transition:  0.4s 0.6s; /*-webkit-transition-delay: 0.6s; -moz-transition-delay: 0.6s; -ms-transition-delay: 0.6s; -o-transition-delay: 0.6s; transition-delay: 0.6s;*/opacity: 1;cursor: pointer;pointer-events: initial;}
+
+        .paper-flip.folded .share-layer{z-index: 1; -webkit-transition: all 0.1s 0.4s; -moz-transition: all 0.1s 0.4s; -ms-transition: all 0.1s 0.4s; -o-transition: all 0.1s 0.4s; transition: all 0.1s 0.4s;}
+        .paper-flip.folded .btn-wrap{
+            opacity: 1;
+            -webkit-transition: all 0.4s;
+            -o-transition: all 0.4s;
+            transition: all 0.4s;
+            -webkit-transition-delay: 0.6s;
+            -o-transition-delay: 0.6s;
+            transition-delay: 0.6s;
+            pointer-events: initial;
+        }
+
+        .img-layer{position: absolute;tbop: 0;left: 0;width: 500px;height: 300px;overflow: hidden;}
+        .img-layer img{width: 500px;text-align: center;}
+        .img-layer:before{content: '';position: absolute;top: 0;right: 0; border-style:solid;border-width: 0;border-color: rgba(0,0,0,.2) #fff;border-radius: 0 0 0 4px;ox-shadow: 0 1px 1px rgba(0,0,0,0.3), -1px 1px 1px rgba(0,0,0,0.2); -webkit-transition: all 0.4s ease-out; -moz-transition: all 0.4s ease-out; -ms-transition: all 0.4s ease-out; -o-transition: all 0.4s ease-out; transition: all 0.4s ease-out;}
+        .img-layer:hover:before{border-right-width: 80px;border-bottom-width: 80px;}
+        .paper-flip.folded .img-layer:before{border-right-width:1000px;border-bottom-width:600px;}
+
+
+        /*按钮折叠*/
+        .btn-fold{display: block;width: 120px;height: 30px;line-height: 30px;border-radius: 3px;font-size: 14px;color: #ffffff;text-align: center;text-decoration: none;margin: 0 auto;background-color: #e6674a;}
+        .btn-fold:before{content: attr(title);}
+        .btn-fold:after,.btn-fold.open:after{content: '';display: inline-block;position: relative;top: -2px;left: 5px;}
+        .btn-fold:after{border-left: 5px solid transparent;border-top: 5px solid #ffffff;border-right: 5px solid transparent;border-bottom-width: 0;}
+        .btn-fold.open:before{content: attr(opentitle);}
+        .btn-fold.open:after{border-left: 5px solid transparent;border-top-width: 0;border-right: 5px solid transparent;border-bottom: 5px solid #ffffff;}
+    </style>
+</head>
+<body>
+<h1>border-width实现翻页效果</h1>
+<div class="paper-flip" id="paper-flip">
+    <div class="share-layer">
+        <div class="btn-wrap">
+            <a href="javascript:;" class="btn btn-facebook">FaceBook</a>
+            <a href="javascript:;" class="btn btn-twitter">Twitter</a>
+            <a href="javascript:;" class="btn btn-google">Google +</a>
+        </div>
+        <span class="btn-close">×</span>
+    </div>
+    <div class="img-layer" id="img-layer">
+        <img src="img/table.jpg" alt="">
+    </div>
+</div>
+<h1>按钮的折叠</h1>
+<a title="展开更多" opentitle="折叠" href="javascript:;" class="btn-fold"></a>
+<script type="text/javascript">
+    document.getElementById('paper-flip').addEventListener("click",function(e){
+        if(e.target.className=="btn-close"){
+            this.className = "paper-flip";
+        } else {
+            this.className = "paper-flip folded";
+        }
+    });
+    var btn=document.querySelector('.btn-fold');
+    var flag=1;
+    btn.addEventListener('click',function (e) {
+        e.preventDefault();
+        if(flag){
+            this.className='btn-fold open';
+            flag=0;
+        }else{
+            this.className='btn-fold';
+            flag=1;
+        }
+        
+    })
+</script>
+</body>
+</html>

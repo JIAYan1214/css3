@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>照片墙</title>
+    <style>
+        body{margin:0;padding:0;/*color: #ffffff;background-color: #222;*/}
+        .photoWall{width: 300px;height: 200px;margin: 100px auto;}
+        /*transform-origin：x轴 y轴 z轴；transition: 过度属性 动画完成时间 动画运动方式 延时执行时间;*/
+        .photoWall img{position: absolute;border: 10px solid #ffffff;box-shadow: 4px 4px 10px rgba(0,0,0,.3);-webkit-transform-origin: center 400px;transform-origin: center 400px; -webkit-transition: transform .7s ease; -moz-transition: transform .7s ease; -ms-transition: transform .7s ease; -o-transition: transform .7s ease; transition: transform .7s ease;}
+        .photoWall>img:first-child{ -webkit-transform: rotate(5deg); -moz-transform: rotate(5deg); -ms-transform: rotate(5deg); -o-transform: rotate(5deg); transform: rotate(5deg);}
+        .photoWall>img:last-child{ -webkit-transform: rotate(-5deg); -moz-transform: rotate(-5deg); -ms-transform: rotate(-5deg); -o-transform: rotate(-5deg); transform: rotate(-5deg);}
+        .photoWall:hover>img:first-child{ -webkit-transform: rotate(25deg); -moz-transform: rotate(25deg); -ms-transform: rotate(25deg); -o-transform: rotate(25deg); transform: rotate(25deg);}
+        .photoWall:hover>img:last-child{ -webkit-transform: rotate(-25deg); -moz-transform: rotate(-25deg); -ms-transform: rotate(-25deg); -o-transform: rotate(-25deg); transform: rotate(-25deg);}
+    </style>
+</head>
+<body>
+<div class="photoWall">
+    <img src="http://p3.qhimg.com/t0166077e858154cdb6.jpg" alt="" width="300" height="200"/>
+    <img src="http://p7.qhimg.com/t01c9fca4f9a05cd8c4.jpg" alt="" width="300" height="200"/>
+    <img src="http://p0.qhimg.com/t01fad64ae21ddd6221.jpg" alt="" width="300" height="200"/>
+</div>
+</body>
+</html>

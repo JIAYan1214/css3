@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>loading</title>
+    <style>
+        /*animation: 动画名字 完成话费时间 动画曲线 延时 播放次数（正常数值，infinite:无限次播放） 是否轮流播放动画;*/
+        .spinner{width: 40px;height: 40px;background-color: #67b374;border-radius: 100%;margin: 100px auto; -webkit-animation:fadeOut 1s ease-in-out infinite; -o-animation:fadeOut 1s ease-in-out infinite; animation:fadeOut 1s ease-in-out infinite;}
+        @-webkit-keyframes fadeOut {
+            form{-webkit-transform: scale(0.0);}
+            to{-webkit-transform: scale(1.0);opacity: 0;}
+        }
+        @keyframes fadeOut {
+            form{transform: scale(0.0)}
+            to{transform: scale(1.0);opacity: 0;}
+        }
+    </style>
+</head>
+<body>
+<div class="spinner"></div>
+</body>
+</html>

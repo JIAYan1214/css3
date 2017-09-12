@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>钟表移动</title>
+    <style>
+        body{margin: 0;padding: 0;color:#ffffff;background-color: #222222;}
+        h1{font-size: 14px;text-align: center;}
+        .stage{width: 120px;height: auto;margin: 16px  auto;position: relative;transform-origin: center 16px; -webkit-transform: rotate(-30deg); -moz-transform: rotate(-30deg); -ms-transform: rotate(-30deg); -o-transform: rotate(-30deg); transform: rotate(-30deg); -webkit-animation:; -o-animation:; animation:sway 2.2s infinite alternate ease-in-out;}
+        .watch{width: 100%;height: auto;}
+        .seconds{position: absolute;width: 8%;height: auto;bottom: 11.5%;left: 45.5%;-webkit-transform-origin:center 72.4%;-webkit-animation:second 60s infinite linear;}
+
+		@-webkit-keyframes second{
+		  to{
+		    -webkit-transform:rotate(355deg);
+		  }
+		}
+		@-webkit-keyframes sway{
+		  to{
+		   -webkit-transform:rotate(30deg);
+		  }
+		}
+
+    </style>
+</head>
+<body>
+<h1>钟表移动</h1>
+<div class="stage">
+    <img src="img/biao.png" class="watch" alt="">
+    <img src="img/秒表.png" alt="" class="seconds">
+</div>
+</body>
+</html>
