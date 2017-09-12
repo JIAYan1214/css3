@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>margin一侧定宽</title>
+    <style>
+        .box{
+            width:100%;
+            margin:0 auto;
+            margin-left: 200px;
+        }
+        .box img{
+            margin-left: -200px;
+            width:200px;
+            background: red;
+            height: 300px;
+            float:left;
+        }
+        .main{
+            width: 100%;
+            background: blue;
+            height: 300px;
+            float:left;
+        }
+        .father{width: 500px;height: 200px; -webkit-writing-mode: vertical-lr; -ms-writing-mode: vertical-lr; writing-mode: vertical-lr;background-color: gainsboro;}
+        .son{width: 200px;height: 100px;margin: auto;background-color: #00aced;}
+    </style>
+</head>
+<body>
+<!--<div class="box">
+    <img src="../img/h1.jpg" alt="">
+    <p class="main">ssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss</p>
+</div>-->
+<div style="width: 500px;margin-left: auto;margin-right: 100px;background-color: #67b374">10000</div>
+<div class="father">
+    <div class="son"></div>
+</div>
+</body>
+</html>

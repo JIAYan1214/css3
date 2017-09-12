@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>复选框效果</title>
+    <style>
+        form{border: 1px solid #ccc;padding: 20px;width: 300px;margin: 30px auto;}
+        .wrapper{margin-bottom: 10px;}
+        .box{display: inline-block;position: relative;width: 20px;height: 20px;border: 2px solid orange;}
+        .box input{position: absolute;top: 0;left: 0;top: -3px;left: -4px;width: 21px;height: 21px; opacity: 0;cursor: pointer;z-index: 5; }
+        .box span{position: absolute;top: 1px; right: 6px;font-size: 19px;font-weight: bold;font-family: Arial; -webkit-transform: rotate(18deg); -moz-transform: rotate(18deg); -ms-transform: rotate(18deg); -o-transform: rotate(18deg); transform: rotate(18deg);color: orange;}
+        input[type="checkbox"]+span{opacity: 0;}
+        input[type="checkbox"]:checked+span{opacity: 1;}
+    </style>
+</head>
+<body>
+<form action="#">
+    <div class="wrapper">
+        <div class="box">
+            <input type="checkbox" checked id="userName" /><span>√</span>
+        </div>
+        <label for="userName">我是选中状态</label>
+    </div>
+    <div class="wrapper">
+        <div class="box">
+            <input type="checkbox" id="userNum" /><span>√</span>
+        </div>
+        <label for="userNum">我是未选中状态</label>
+    </div>
+</form>
+
+</body>
+</html>

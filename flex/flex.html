@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>flex</title>
+    <link rel="stylesheet" href="flex.css">
+    <link rel="stylesheet" href="swiper.min.css">
+</head>
+<body>
+<header class="header0614">
+    <div class="space0614"></div>
+    <div class="left">2017-06-14</div>
+    <div class="right">right</div>
+</header>
+<div class="content-columns">
+    <div class="space0614"></div>
+    <div class="charts-content0614">charts</div>
+    <div class="space0614"></div>
+    <div class="carousel-content0614">
+       <!-- <div class="swiper-container" style="width: 60%;">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">Slide 1</div>
+                <div class="swiper-slide">Slide 2</div>
+                <div class="swiper-slide">Slide 3</div>
+            </div>
+            &lt;!&ndash; Add Pagination &ndash;&gt;
+            <div class="swiper-pagination"></div>
+            &lt;!&ndash; Add Arrows &ndash;&gt;
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+        </div>-->
+    </div>
+    <div class="space0614"></div>
+</div>
+<script src="swiper.min.js"></script>
+<script>
+    var swiper = new Swiper('.swiper-container', {
+        pagination: '.swiper-pagination',
+        nextButton: '.swiper-button-next',
+        prevButton: '.swiper-button-prev',
+        slidesPerView: 1,
+        paginationClickable: true,
+        spaceBetween: 30,
+        loop: true
+    });
+</script>
+</body>
+</html>

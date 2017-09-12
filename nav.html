@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>css-导航</title>
+    <style>
+        *{margin: 0;padding: 0;}
+        .con{margin-top: 100px;}
+        .nav{width: 560px;height: 50px;margin: 0 auto;font: bold 0/50px Arial;background-color: #f65f57; -webkit-border-radius: 5px; -moz-border-radius: 5px; border-radius: 5px;box-shadow: 0 5px 3px 1px #b64b41;text-align: center;}/*box-shadow: X轴偏移量 Y轴偏移量 [阴影模糊半径] [阴影扩展半径] [阴影颜色] [投影方式](投影方式默认为外部投影，inset内部投影);*/
+        .nav li{display: inline-block;position: relative;padding: 0 16px;font-size: 13px;text-shadow: 1px 2px 4px rgba(0,0,0,.5);list-style: none outside none;background: linear-gradient(to bottom,#dd2926,#a82724,#dd2926) no-repeat right / 1px 15px;}
+        .nav a{display: inline-block; -webkit-transition: all 0.2s ease-in; -moz-transition: all 0.2s ease-in; -ms-transition: all 0.2s ease-in; -o-transition: all 0.2s ease-in; transition: all 0.2s ease-in;}/*text-shadow: X-Offset Y-Offset blur color;*/
+        .nav a:hover{ -webkit-transform: rotate(10deg); -moz-transform: rotate(10deg); -ms-transform: rotate(10deg); -o-transform: rotate(10deg); transform: rotate(10deg);}
+        .nav li:last-child{background: none;}
+
+        .nav a,.nav a:hover{text-decoration: none;color: #fff;}
+        /*属性匹配*/
+        a[class^=column]{font-size: 16px;color: #a82724;}
+        a[href$=pdf]{font-size: 18px;color: blue}
+        a[title*=hello]{font-size: 18px;color: green}
+    </style>
+</head>
+<body>
+<div class="con">
+    <ul class="nav">
+        <li><a href="">Home</a></li>
+        <li><a href="">About Me</a></li>
+        <li><a href="">Portfolio</a></li>
+        <li><a href="">Blog</a></li>
+        <li><a href="">Resources</a></li>
+        <li><a href="">Contact Me</a></li>
+    </ul>
+</div>
+
+<div class="sxpp">
+    <h2>属性匹配，^以什么开头，$以什么结尾，*包好某个属性</h2>
+    <a class="columnTitle">tagName[attr^=value]以什么开头</a>
+    <a class="column-news">tagName[attr^=value]以什么开头</a>
+    <a href="aa.pdf">tagName[attr$=value]以什么结尾</a>
+    <a href="bb.pdf">tagName[attr$=value]以什么结尾</a>
+    <a href="" title="hello adc">tagName[attr*=value]包含某个属性</a>
+    <a href="" title="hello ccc">tagName[attr*=value]包含某个属性</a>
+
+</div>
+
+
+</body>
+</html>
